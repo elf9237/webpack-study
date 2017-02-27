@@ -3,7 +3,9 @@ var htmlWebpackPlugin = require('html-webpack-plugin'); //建立对插件的引�
 module.exports = {
   entry:{
     main:"./src/script/main.js",
-    a:"./src/script/a.js"
+    a:"./src/script/a.js",
+    b:"./src/script/a.js",
+    c:"./src/script/a.js"
   },
   output:{
     path:'./dist',          //打包后的文件输出位置
@@ -17,10 +19,7 @@ module.exports = {
    template:'index.html',
    title:'webpack is good!',
    date:new Date(),
-   minify:{
-     removeComments:true, //删除注释
-     collapseWhitespace:true //删除空格
-   }
+
  })   //插件初始化,传参可把根目录index.html与动态打包生成的index.html建立联系
   ]
 };

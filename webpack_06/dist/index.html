@@ -1,17 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>webpack is good!</title>
-  <script type="text/javascript" src="http://cdn.com/js/main.js">
-
-  </script>
-</head>
-<body>
-Sat Feb 25 2017 16:40:00 GMT+0800 (中国标准时间) //直接取值
-
-<script type="text/javascript" src="http://cdn.com/js/a.js">
-</body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Parse Error:  
+    <!-- 我是一行注释 --> 
+  </body> 
+  </html>
+  
+  - htmlparser.js:236 new HTMLParser
+    [webpack_06]/[html-minifier]/src/htmlparser.js:236:13
+  
+  - htmlminifier.js:962 minify
+    [webpack_06]/[html-minifier]/src/htmlminifier.js:962:3
+  
+  - htmlminifier.js:1315 exports.minify
+    [webpack_06]/[html-minifier]/src/htmlminifier.js:1315:10
+  
+  - index.js:297 
+    [webpack_06]/[html-webpack-plugin]/index.js:297:16
+  
+  - util.js:16 tryCatcher
+    [webpack_06]/[bluebird]/js/release/util.js:16:23
+  
+  - promise.js:510 Promise._settlePromiseFromHandler
+    [webpack_06]/[bluebird]/js/release/promise.js:510:31
+  
+  - promise.js:567 Promise._settlePromise
+    [webpack_06]/[bluebird]/js/release/promise.js:567:18
+  
+  - promise.js:612 Promise._settlePromise0
+    [webpack_06]/[bluebird]/js/release/promise.js:612:10
+  
+  - promise.js:691 Promise._settlePromises
+    [webpack_06]/[bluebird]/js/release/promise.js:691:18
+  
+  - async.js:133 Async._drainQueue
+    [webpack_06]/[bluebird]/js/release/async.js:133:16
+  
+  - async.js:143 Async._drainQueues
+    [webpack_06]/[bluebird]/js/release/async.js:143:10
+  
+  - async.js:17 Immediate.Async.drainQueues
+    [webpack_06]/[bluebird]/js/release/async.js:17:14
+  
+</pre>
