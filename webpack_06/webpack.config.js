@@ -4,8 +4,8 @@ module.exports = {
   entry:{
     main:"./src/script/main.js",
     a:"./src/script/a.js",
-    b:"./src/script/a.js",
-    c:"./src/script/a.js"
+    b:"./src/script/b.js",
+    c:"./src/script/c.js"
   },
   output:{
     path:'./dist',          //打包后的文件输出位置
@@ -15,11 +15,35 @@ module.exports = {
   plugins:[
  new htmlWebpackPlugin({
    filename:'index.html',  //文件名
-   inject:false,   //脚本嵌入位置，可head或body
+   inject:'body',   //脚本嵌入位置，可head或body
    template:'index.html',
-   title:'webpack is good!',
-   date:new Date(),
+   title:'This is main.html',
+   chunks:['main','a']
 
- })   //插件初始化,传参可把根目录index.html与动态打包生成的index.html建立联系
+ }),  //插件初始化,传参可把根目录index.html与动态打包生成的index.html建立联系
+ new htmlWebpackPlugin({
+   filename:'a.html',  //文件名
+   inject:'body',   //脚本嵌入位置，可head或body
+   template:'index.html',
+   title:'This is a.html',
+   chunks:['a']
+
+ }),
+ new htmlWebpackPlugin({
+   filename:'b.html',  //文件名
+   inject:'body',   //脚本嵌入位置，可head或body
+   template:'index.html',
+   title:'This is b.html',
+   chunks:['b']
+
+ }),
+ new htmlWebpackPlugin({
+   filename:'c.html',  //文件名
+   inject:'body',   //脚本嵌入位置，可head或body
+   template:'index.html',
+   title:'This is c.html',
+   chunks:['c']
+
+ })
   ]
 };
