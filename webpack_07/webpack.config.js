@@ -2,14 +2,14 @@ var htmlWebpackPlugin = require('html-webpack-plugin'); //建立对插件的引�
 var path = require('path');
  // common.js模块化文件配置
 module.exports = {
-  context:__dirname,
+  // context:__dirname,
   entry:'./src/script/app.js',
   output:{
     path:'./dist',          //打包后的文件输出位置
     filename:'js/[name].bundle.js',      //打包后的文件名字
   },
   module:{
-    loaders:[
+    rules:[
       {
         test:/\.js$/,
         loader:'babel-loader',
@@ -21,15 +21,29 @@ module.exports = {
       },
       {
         test:/\.css$/,
-        loader:'style-loader!css-loader?importLoaders=1!postcss-loader'
-      }
+        loaders:[
+            'style-loader',
+            'css-loader?importLoaders=1',
+            // 'postcss-loader'
+        ],
+        // options:{
+        //   plugins:function(){
+        //     require('autoprefixer')({
+        //       broswers:['last 5 versions']
+        //     });
+        //   }
+        // }
+      },
+      // {
+      //   test:/\.less$/,
+      //   loaders:[
+      //     'style-loader',
+      //     'css-loader',
+      //     'less-loader'
+      //   ]
+      // }
     ]
   },
-  postcss:[
-    require('autoprefixer')({
-      broswers:['last 5 versions']
-    })
-  ],
   plugins:[
  new htmlWebpackPlugin({
    filename:'index.html',  //文件名
