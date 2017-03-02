@@ -461,9 +461,12 @@ var _layer2 = _interopRequireDefault(_layer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  var dom = document.getElementById('#app');
+  var dom = document.getElementById('app');
   var layer = new layer();
-  dom.innerHtml = layer.tpl;
+  dom.innerHtml = layer.tpl({
+    name: 'john',
+    arr: ['apple', 'xiaomi', 'huawei']
+  });
 };
 new App();
 

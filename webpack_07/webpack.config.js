@@ -42,6 +42,10 @@ module.exports = {
       //     'less-loader'
       //   ]
       // }
+      {
+        test:/\.ejs$/,
+        loader:'ejs-loader'
+      }
     ]
   },
   plugins:[
