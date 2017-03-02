@@ -45,7 +45,14 @@ module.exports = {
       {
         test:/\.ejs$/,
         loader:'ejs-loader'
-      }
+      },
+      {
+        test:/\.(png|jpg|gif|svg)$/,
+        loaders:[
+          'url-loader?limit:10000&name=assets/[name]-[hash:5].[ext]',
+          'image-webpack-loader'
+        ]
+      },
     ]
   },
   plugins:[
