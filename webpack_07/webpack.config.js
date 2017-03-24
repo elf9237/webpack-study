@@ -34,14 +34,14 @@ module.exports = {
         //   }
         // }
       },
-      // {
-      //   test:/\.less$/,
-      //   loaders:[
-      //     'style-loader',
-      //     'css-loader',
-      //     'less-loader'
-      //   ]
-      // }
+      {
+        test:/\.less$/,
+        use:[
+          {loader:'style-loader'},
+          {loader:'css-loader'},
+          {loader:'less-loader'}
+        ]
+      },
       {
         test:/\.ejs$/,
         loader:'ejs-loader'

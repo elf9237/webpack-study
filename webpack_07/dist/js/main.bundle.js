@@ -63,45 +63,20 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _layer = __webpack_require__(5);
-
-var _layer2 = _interopRequireDefault(_layer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function layer() {
-  return {
-    name: 'layer',
-    tpl: _layer2.default
-  };
-} // import './layer.less';
-exports.default = layer;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(2);
+var content = __webpack_require__(1);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(4)(content, {});
+var update = __webpack_require__(3)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -118,10 +93,10 @@ if(false) {
 }
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)();
+exports = module.exports = __webpack_require__(2)();
 // imports
 
 
@@ -132,7 +107,7 @@ exports.push([module.i, "/*@import \"./flex.css\";*/\r\nhtml,body{\r\n  margin: 
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /*
@@ -188,7 +163,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports) {
 
 /*
@@ -440,26 +415,15 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: E:\\宏林文件\\学习\\webpack-study\\webpack_07\\src\\components\\layer\\layer.html Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| <div class=\"layer\">\r\n|     <div class=\"\">This is layer</div>\r\n| </div>\r");
-
-/***/ }),
-/* 6 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(1);
+__webpack_require__(0);
 
-var _layer = __webpack_require__(0);
-
-var _layer2 = _interopRequireDefault(_layer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+// import layer from '../components/layer/layer.js';
 var App = function App() {
   var dom = document.getElementById('app');
   var layer = new layer();
